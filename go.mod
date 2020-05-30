@@ -1,4 +1,4 @@
-module hello-pulumi
+module go.jlucktay.dev/hello-pulumi
 
 go 1.14
 
