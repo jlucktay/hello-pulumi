@@ -28,10 +28,15 @@ func main() {
 			return err
 		}
 
+		const startupScript = `#!/usr/bin/env bash
+echo "Hello, World!" > index.html
+nohup python -m SimpleHTTPServer 80 &`
+
 		// Create a Virtual Machine Instance
 		computeInstance, err := compute.NewInstance(ctx, "instance", &compute.InstanceArgs{
-			MachineType: pulumi.String("f1-micro"),
-			Zone:        pulumi.String("us-east1-d"),
+			MachineType:           pulumi.String("f1-micro"),
+			Zone:                  pulumi.String("us-east1-d"),
+			MetadataStartupScript: pulumi.String(startupScript),
 			BootDisk: compute.InstanceBootDiskArgs{
 				InitializeParams: compute.InstanceBootDiskInitializeParamsArgs{
 					Image: pulumi.String("debian-cloud/debian-9"),
