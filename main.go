@@ -20,7 +20,10 @@ func main() {
 			Allows: compute.FirewallAllowArray{
 				compute.FirewallAllowArgs{
 					Protocol: pulumi.String("tcp"),
-					Ports:    pulumi.StringArray{pulumi.String("22")},
+					Ports: pulumi.StringArray{
+						pulumi.String("22"),
+						pulumi.String("80"),
+					},
 				},
 			},
 		})
