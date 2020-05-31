@@ -1,0 +1,7 @@
+delay: 5
+enabled: true
+label: "needs-triage"
+skip_when_has_assignee: false
+skip_when_has_milestone: true
+#
+# skip_when_has_labels
