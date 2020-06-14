@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/pulumi/pulumi/pkg/resource"
+	"github.com/pulumi/pulumi/pkg/v2/resource"
 )
 
 type mocks int
